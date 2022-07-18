@@ -6,12 +6,21 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import Kingfisher
 
 struct ContentView: View {
+    @EnvironmentObject var viewModel: AuthViewModel
+    @State private var showMenu = false
+    
     var body: some View {
-        Text("Locale")
-            .padding()
-            .padding()
+        Group {
+            if viewModel.userSession == nil {
+                LogInView()
+            } else {
+               //mainInterfaceView
+           }
+        }
     }
 }
 

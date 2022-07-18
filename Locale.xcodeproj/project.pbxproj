@@ -17,6 +17,20 @@
 		8900CB8F2885F8B0007DDE9F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900CB652885F8AE007DDE9F /* ContentView.swift */; };
 		8900CB902885F8B0007DDE9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8900CB662885F8B0007DDE9F /* Assets.xcassets */; };
 		8900CB912885F8B0007DDE9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8900CB662885F8B0007DDE9F /* Assets.xcassets */; };
+		8900CBAA2885FAA7007DDE9F /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900CBA92885FAA7007DDE9F /* LogInView.swift */; };
+		8900CBAC2885FACF007DDE9F /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900CBAB2885FACF007DDE9F /* AuthViewModel.swift */; };
+		8900CBAF2885FB3F007DDE9F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8900CBAE2885FB3F007DDE9F /* FirebaseAuth */; };
+		8900CBB12885FB3F007DDE9F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8900CBB02885FB3F007DDE9F /* FirebaseFirestore */; };
+		8900CBB32885FB3F007DDE9F /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8900CBB22885FB3F007DDE9F /* FirebaseFirestoreSwift */; };
+		8900CBB52885FB3F007DDE9F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8900CBB42885FB3F007DDE9F /* FirebaseStorage */; };
+		8900CBB72885FBC3007DDE9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8900CBB62885FBC3007DDE9F /* GoogleService-Info.plist */; };
+		8900CBBA2885FC07007DDE9F /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900CBB92885FC07007DDE9F /* AuthHeaderView.swift */; };
+		8900CBBC2885FC48007DDE9F /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900CBBB2885FC48007DDE9F /* UserService.swift */; };
+		8900CBBE2885FCB3007DDE9F /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900CBBD2885FCB3007DDE9F /* RegistrationView.swift */; };
+		8900CBC02885FCF3007DDE9F /* CustomInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900CBBF2885FCF3007DDE9F /* CustomInputField.swift */; };
+		8900CBC32885FD65007DDE9F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8900CBC22885FD65007DDE9F /* Kingfisher */; };
+		8900CBC52885FE82007DDE9F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900CBC42885FE82007DDE9F /* User.swift */; };
+		8900CBC82885FEC5007DDE9F /* RoundedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900CBC72885FEC5007DDE9F /* RoundedShape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +63,16 @@
 		8900CB842885F8B0007DDE9F /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8900CB882885F8B0007DDE9F /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		8900CB8A2885F8B0007DDE9F /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		8900CBA92885FAA7007DDE9F /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		8900CBAB2885FACF007DDE9F /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		8900CBB62885FBC3007DDE9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8900CBB92885FC07007DDE9F /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
+		8900CBBB2885FC48007DDE9F /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		8900CBBD2885FCB3007DDE9F /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		8900CBBF2885FCF3007DDE9F /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
+		8900CBC42885FE82007DDE9F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8900CBC72885FEC5007DDE9F /* RoundedShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShape.swift; sourceTree = "<group>"; };
+		8900CBCA28860910007DDE9F /* Exec-Corners-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Exec-Corners-Medium.ttf"; path = "../../../../Downloads/Exec-Corners-Medium/Exec-Corners-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +80,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8900CBAF2885FB3F007DDE9F /* FirebaseAuth in Frameworks */,
+				8900CBB52885FB3F007DDE9F /* FirebaseStorage in Frameworks */,
+				8900CBB12885FB3F007DDE9F /* FirebaseFirestore in Frameworks */,
+				8900CBB32885FB3F007DDE9F /* FirebaseFirestoreSwift in Frameworks */,
+				8900CBC32885FD65007DDE9F /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,9 +126,16 @@
 		8900CB632885F8AE007DDE9F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				8900CBC9288608F4007DDE9F /* ProjectFonts */,
+				8900CBA42885FA37007DDE9F /* Utils */,
+				8900CBA32885FA32007DDE9F /* Service */,
+				8900CBA22885FA2C007DDE9F /* Model */,
+				8900CBA12885FA27007DDE9F /* Extensions */,
+				8900CBA02885FA1B007DDE9F /* Core */,
 				8900CB642885F8AE007DDE9F /* LocaleApp.swift */,
 				8900CB652885F8AE007DDE9F /* ContentView.swift */,
 				8900CB662885F8B0007DDE9F /* Assets.xcassets */,
+				8900CBB62885FBC3007DDE9F /* GoogleService-Info.plist */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -141,6 +177,97 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		8900CBA02885FA1B007DDE9F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8900CBA62885FA53007DDE9F /* Components */,
+				8900CBA52885FA3E007DDE9F /* Authentication */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8900CBA12885FA27007DDE9F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8900CBA22885FA2C007DDE9F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8900CBC42885FE82007DDE9F /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8900CBA32885FA32007DDE9F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				8900CBBB2885FC48007DDE9F /* UserService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		8900CBA42885FA37007DDE9F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8900CBC72885FEC5007DDE9F /* RoundedShape.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8900CBA52885FA3E007DDE9F /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				8900CBA82885FA73007DDE9F /* ViewModel */,
+				8900CBA72885FA6E007DDE9F /* Views */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		8900CBA62885FA53007DDE9F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8900CBB82885FBF5007DDE9F /* Auth */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		8900CBA72885FA6E007DDE9F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8900CBA92885FAA7007DDE9F /* LogInView.swift */,
+				8900CBBD2885FCB3007DDE9F /* RegistrationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8900CBA82885FA73007DDE9F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8900CBAB2885FACF007DDE9F /* AuthViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8900CBB82885FBF5007DDE9F /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				8900CBB92885FC07007DDE9F /* AuthHeaderView.swift */,
+				8900CBBF2885FCF3007DDE9F /* CustomInputField.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		8900CBC9288608F4007DDE9F /* ProjectFonts */ = {
+			isa = PBXGroup;
+			children = (
+				8900CBCA28860910007DDE9F /* Exec-Corners-Medium.ttf */,
+			);
+			path = ProjectFonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -157,6 +284,13 @@
 			dependencies = (
 			);
 			name = "Locale (iOS)";
+			packageProductDependencies = (
+				8900CBAE2885FB3F007DDE9F /* FirebaseAuth */,
+				8900CBB02885FB3F007DDE9F /* FirebaseFirestore */,
+				8900CBB22885FB3F007DDE9F /* FirebaseFirestoreSwift */,
+				8900CBB42885FB3F007DDE9F /* FirebaseStorage */,
+				8900CBC22885FD65007DDE9F /* Kingfisher */,
+			);
 			productName = "Locale (iOS)";
 			productReference = 8900CB6B2885F8B0007DDE9F /* Locale.app */;
 			productType = "com.apple.product-type.application";
@@ -249,6 +383,10 @@
 				Base,
 			);
 			mainGroup = 8900CB5E2885F8AE007DDE9F;
+			packageReferences = (
+				8900CBAD2885FB3F007DDE9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8900CBC12885FD65007DDE9F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 8900CB6C2885F8B0007DDE9F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -267,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8900CB902885F8B0007DDE9F /* Assets.xcassets in Resources */,
+				8900CBB72885FBC3007DDE9F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +438,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8900CBC02885FCF3007DDE9F /* CustomInputField.swift in Sources */,
+				8900CBAC2885FACF007DDE9F /* AuthViewModel.swift in Sources */,
+				8900CBAA2885FAA7007DDE9F /* LogInView.swift in Sources */,
+				8900CBBC2885FC48007DDE9F /* UserService.swift in Sources */,
+				8900CBBE2885FCB3007DDE9F /* RegistrationView.swift in Sources */,
+				8900CBC82885FEC5007DDE9F /* RoundedShape.swift in Sources */,
+				8900CBC52885FE82007DDE9F /* User.swift in Sources */,
 				8900CB8E2885F8B0007DDE9F /* ContentView.swift in Sources */,
+				8900CBBA2885FC07007DDE9F /* AuthHeaderView.swift in Sources */,
 				8900CB8C2885F8B0007DDE9F /* LocaleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -691,6 +838,53 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8900CBAD2885FB3F007DDE9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		8900CBC12885FD65007DDE9F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8900CBAE2885FB3F007DDE9F /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8900CBAD2885FB3F007DDE9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		8900CBB02885FB3F007DDE9F /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8900CBAD2885FB3F007DDE9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		8900CBB22885FB3F007DDE9F /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8900CBAD2885FB3F007DDE9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		8900CBB42885FB3F007DDE9F /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8900CBAD2885FB3F007DDE9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		8900CBC22885FD65007DDE9F /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8900CBC12885FD65007DDE9F /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8900CB5F2885F8AE007DDE9F /* Project object */;
 }
