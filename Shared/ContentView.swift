@@ -18,7 +18,7 @@ struct ContentView: View {
             if viewModel.userSession == nil {
                 LogInView()
             } else {
-               //mainInterfaceView
+               mainInterfaceView
            }
         }
     }
@@ -29,3 +29,31 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+extension ContentView {
+    var mainInterfaceView: some View {
+        ZStack(alignment: .topLeading) {
+            MainTabView()
+                .navigationBarHidden(showMenu)
+            
+            if showMenu {
+                ZStack {
+                    Color(.black)
+                        .opacity(showMenu ? 0.25 : 0.0)
+                }.onTapGesture {
+                    withAnimation(.easeInOut) {
+                        showMenu = false
+                    }
+                }
+                .ignoresSafeArea()
+            }
+            
+        }
+        .navigationTitle("Home")
+        .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            showMenu = false
+        }
+    }
+}
+

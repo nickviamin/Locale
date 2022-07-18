@@ -31,6 +31,12 @@
 		8900CBC32885FD65007DDE9F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8900CBC22885FD65007DDE9F /* Kingfisher */; };
 		8900CBC52885FE82007DDE9F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900CBC42885FE82007DDE9F /* User.swift */; };
 		8900CBC82885FEC5007DDE9F /* RoundedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900CBC72885FEC5007DDE9F /* RoundedShape.swift */; };
+		8900CBCD288615A8007DDE9F /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900CBCC288615A8007DDE9F /* MainTabView.swift */; };
+		8900CBD328861605007DDE9F /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900CBD228861605007DDE9F /* FeedView.swift */; };
+		8900CBD528861617007DDE9F /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900CBD428861617007DDE9F /* FeedViewModel.swift */; };
+		8900CBDA28861812007DDE9F /* OrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900CBD928861812007DDE9F /* OrdersView.swift */; };
+		8900CBDC2886181E007DDE9F /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900CBDB2886181E007DDE9F /* AccountView.swift */; };
+		8900CBDE28861826007DDE9F /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900CBDD28861826007DDE9F /* ExploreView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +79,12 @@
 		8900CBC42885FE82007DDE9F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8900CBC72885FEC5007DDE9F /* RoundedShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShape.swift; sourceTree = "<group>"; };
 		8900CBCA28860910007DDE9F /* Exec-Corners-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Exec-Corners-Medium.ttf"; path = "../../../../Downloads/Exec-Corners-Medium/Exec-Corners-Medium.ttf"; sourceTree = "<group>"; };
+		8900CBCC288615A8007DDE9F /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		8900CBD228861605007DDE9F /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		8900CBD428861617007DDE9F /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		8900CBD928861812007DDE9F /* OrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersView.swift; sourceTree = "<group>"; };
+		8900CBDB2886181E007DDE9F /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		8900CBDD28861826007DDE9F /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +192,11 @@
 		8900CBA02885FA1B007DDE9F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				8900CBD8288617FC007DDE9F /* Orders */,
+				8900CBD7288617E6007DDE9F /* Account */,
+				8900CBD6288617E0007DDE9F /* Explore */,
+				8900CBCE288615CA007DDE9F /* Feed */,
+				8900CBCB2886158C007DDE9F /* MainTab */,
 				8900CBA62885FA53007DDE9F /* Components */,
 				8900CBA52885FA3E007DDE9F /* Authentication */,
 			);
@@ -266,6 +283,63 @@
 				8900CBCA28860910007DDE9F /* Exec-Corners-Medium.ttf */,
 			);
 			path = ProjectFonts;
+			sourceTree = "<group>";
+		};
+		8900CBCB2886158C007DDE9F /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+				8900CBCC288615A8007DDE9F /* MainTabView.swift */,
+			);
+			path = MainTab;
+			sourceTree = "<group>";
+		};
+		8900CBCE288615CA007DDE9F /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				8900CBD1288615EA007DDE9F /* Views */,
+				8900CBD0288615E6007DDE9F /* ViewModels */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		8900CBD0288615E6007DDE9F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8900CBD428861617007DDE9F /* FeedViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8900CBD1288615EA007DDE9F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8900CBD228861605007DDE9F /* FeedView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8900CBD6288617E0007DDE9F /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				8900CBDD28861826007DDE9F /* ExploreView.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		8900CBD7288617E6007DDE9F /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				8900CBDB2886181E007DDE9F /* AccountView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		8900CBD8288617FC007DDE9F /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				8900CBD928861812007DDE9F /* OrdersView.swift */,
+			);
+			path = Orders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,12 +516,18 @@
 				8900CBAC2885FACF007DDE9F /* AuthViewModel.swift in Sources */,
 				8900CBAA2885FAA7007DDE9F /* LogInView.swift in Sources */,
 				8900CBBC2885FC48007DDE9F /* UserService.swift in Sources */,
+				8900CBD328861605007DDE9F /* FeedView.swift in Sources */,
 				8900CBBE2885FCB3007DDE9F /* RegistrationView.swift in Sources */,
+				8900CBDE28861826007DDE9F /* ExploreView.swift in Sources */,
+				8900CBCD288615A8007DDE9F /* MainTabView.swift in Sources */,
+				8900CBDA28861812007DDE9F /* OrdersView.swift in Sources */,
 				8900CBC82885FEC5007DDE9F /* RoundedShape.swift in Sources */,
+				8900CBDC2886181E007DDE9F /* AccountView.swift in Sources */,
 				8900CBC52885FE82007DDE9F /* User.swift in Sources */,
 				8900CB8E2885F8B0007DDE9F /* ContentView.swift in Sources */,
 				8900CBBA2885FC07007DDE9F /* AuthHeaderView.swift in Sources */,
 				8900CB8C2885F8B0007DDE9F /* LocaleApp.swift in Sources */,
+				8900CBD528861617007DDE9F /* FeedViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
