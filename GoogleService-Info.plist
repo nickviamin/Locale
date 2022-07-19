@@ -2,9 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>ATSApplicationFontsPath</key>
+	<string></string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>ProjectFonts/Exec-Corners-Medium.ttf</string>
+		<string>Fonts/Trebuchet MS.ttf</string>
+		<string>Fonts/Trebuchet MS Bold.ttf</string>
+		<string>Fonts/Exec-Corners-Medium.ttf</string>
 	</array>
 	<key>CLIENT_ID</key>
 	<string>755667112727-bjuba5proqfl1dv35jiir4577c12vmsq.apps.googleusercontent.com</string>

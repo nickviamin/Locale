@@ -11,10 +11,12 @@ struct AuthHeaderView: View {
     let title1: String
     let title2: String
     
+    
     var body: some View {
         ZStack(alignment: .topLeading){
             Image("header")
-                .frame(width: 377, height: 260)
+                .resizable()
+                .frame(width: 410, height: 260)
                 .padding(.leading)
                 .scaledToFill()
                 .clipShape(RoundedShape(corners: [.bottomRight]))
@@ -24,11 +26,13 @@ struct AuthHeaderView: View {
                     .padding()
                     .padding()
                     .padding()
+                    .padding()
                 Text(title1)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                     .padding(.leading)
-                    .font(Font.custom("Exec-Corners-Medium", size: 70))
+                    .padding()
+                    .font(Font.custom(FontsManager.Fonts.treb, size: 70))
                 
                 Text(title2)
                     .font(.largeTitle)
