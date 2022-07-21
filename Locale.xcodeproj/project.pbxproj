@@ -46,6 +46,9 @@
 		89E2CE7D28865249008D4CE4 /* Trebuchet MS Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89E2CE7B28865249008D4CE4 /* Trebuchet MS Bold.ttf */; };
 		89E2CE7F2886525B008D4CE4 /* Trebuchet MS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89E2CE7E2886525B008D4CE4 /* Trebuchet MS.ttf */; };
 		89E2CE802886525B008D4CE4 /* Trebuchet MS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89E2CE7E2886525B008D4CE4 /* Trebuchet MS.ttf */; };
+		89E813D8288A0378005A69EF /* FeedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E813D7288A0378005A69EF /* FeedItemView.swift */; };
+		89E813E0288A0A57005A69EF /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E813DF288A0A57005A69EF /* AddItemView.swift */; };
+		89E813E2288A0CA9005A69EF /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E813E1288A0CA9005A69EF /* ColorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,9 @@
 		89E2CE782886501F008D4CE4 /* FontsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsManager.swift; sourceTree = "<group>"; };
 		89E2CE7B28865249008D4CE4 /* Trebuchet MS Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Trebuchet MS Bold.ttf"; path = "../../../../../../System/Library/Fonts/Supplemental/Trebuchet MS Bold.ttf"; sourceTree = "<group>"; };
 		89E2CE7E2886525B008D4CE4 /* Trebuchet MS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Trebuchet MS.ttf"; path = "../../../../../../System/Library/Fonts/Supplemental/Trebuchet MS.ttf"; sourceTree = "<group>"; };
+		89E813D7288A0378005A69EF /* FeedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemView.swift; sourceTree = "<group>"; };
+		89E813DF288A0A57005A69EF /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		89E813E1288A0CA9005A69EF /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +210,7 @@
 		8900CBA02885FA1B007DDE9F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				89E813DA288A09F0005A69EF /* AddItem */,
 				8900CBD8288617FC007DDE9F /* Orders */,
 				8900CBD7288617E6007DDE9F /* Account */,
 				8900CBD6288617E0007DDE9F /* Explore */,
@@ -242,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				8900CBC72885FEC5007DDE9F /* RoundedShape.swift */,
+				89E813E1288A0CA9005A69EF /* ColorManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -318,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				8900CBD228861605007DDE9F /* FeedView.swift */,
+				89E813D7288A0378005A69EF /* FeedItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -355,6 +364,30 @@
 				89E2CE782886501F008D4CE4 /* FontsManager.swift */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		89E813DA288A09F0005A69EF /* AddItem */ = {
+			isa = PBXGroup;
+			children = (
+				89E813DC288A09FE005A69EF /* ViewModels */,
+				89E813DB288A09FA005A69EF /* Views */,
+			);
+			path = AddItem;
+			sourceTree = "<group>";
+		};
+		89E813DB288A09FA005A69EF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				89E813DF288A0A57005A69EF /* AddItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		89E813DC288A09FE005A69EF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -541,8 +574,11 @@
 				8900CBD328861605007DDE9F /* FeedView.swift in Sources */,
 				8900CBBE2885FCB3007DDE9F /* RegistrationView.swift in Sources */,
 				8900CBDE28861826007DDE9F /* ExploreView.swift in Sources */,
+				89E813D8288A0378005A69EF /* FeedItemView.swift in Sources */,
 				8900CBCD288615A8007DDE9F /* MainTabView.swift in Sources */,
+				89E813E0288A0A57005A69EF /* AddItemView.swift in Sources */,
 				89E2CE792886501F008D4CE4 /* FontsManager.swift in Sources */,
+				89E813E2288A0CA9005A69EF /* ColorManager.swift in Sources */,
 				8900CBDA28861812007DDE9F /* OrdersView.swift in Sources */,
 				8900CBC82885FEC5007DDE9F /* RoundedShape.swift in Sources */,
 				8900CBDC2886181E007DDE9F /* AccountView.swift in Sources */,

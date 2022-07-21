@@ -28,6 +28,7 @@ struct CustomInputField: View {
             Divider()
                 .background(Color(.darkGray))
         }
+        .navigationBarHidden(true)
     }
 }
 

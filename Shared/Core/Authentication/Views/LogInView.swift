@@ -4,7 +4,6 @@
 //
 //  Created by Nick Viamin on 7/18/22.
 //
-
 import SwiftUI
 
 struct LogInView: View {
