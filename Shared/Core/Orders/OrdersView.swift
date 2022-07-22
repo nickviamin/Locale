@@ -10,6 +10,8 @@ import SwiftUI
 struct OrdersView: View {
     var body: some View {
         Text("Display Orders Here")
+            .navigationBarHidden(true)
+            .statusBar(hidden: true)
     }
 }
 

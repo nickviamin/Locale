@@ -105,8 +105,6 @@ struct ExploreView: View {
             }
             Spacer()
         }
-        .navigationTitle("Explore")
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

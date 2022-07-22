@@ -54,6 +54,7 @@
 		89E813EF288AF3F8005A69EF /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E813EE288AF3F8005A69EF /* DateManager.swift */; };
 		89E813F4288B09EF005A69EF /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E813F3288B09EF005A69EF /* CartView.swift */; };
 		89E813F7288B0A03005A69EF /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E813F6288B0A03005A69EF /* CartViewModel.swift */; };
+		89E813FA288B215E005A69EF /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 89E813F9288B215E005A69EF /* Introspect */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8900CBAF2885FB3F007DDE9F /* FirebaseAuth in Frameworks */,
+				89E813FA288B215E005A69EF /* Introspect in Frameworks */,
 				8900CBB52885FB3F007DDE9F /* FirebaseStorage in Frameworks */,
 				8900CBB12885FB3F007DDE9F /* FirebaseFirestore in Frameworks */,
 				8900CBB32885FB3F007DDE9F /* FirebaseFirestoreSwift in Frameworks */,
@@ -475,6 +477,7 @@
 				8900CBB22885FB3F007DDE9F /* FirebaseFirestoreSwift */,
 				8900CBB42885FB3F007DDE9F /* FirebaseStorage */,
 				8900CBC22885FD65007DDE9F /* Kingfisher */,
+				89E813F9288B215E005A69EF /* Introspect */,
 			);
 			productName = "Locale (iOS)";
 			productReference = 8900CB6B2885F8B0007DDE9F /* Locale.app */;
@@ -571,6 +574,7 @@
 			packageReferences = (
 				8900CBAD2885FB3F007DDE9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				8900CBC12885FD65007DDE9F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				89E813F8288B215E005A69EF /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = 8900CB6C2885F8B0007DDE9F /* Products */;
 			projectDirPath = "";
@@ -1064,6 +1068,14 @@
 				kind = branch;
 			};
 		};
+		89E813F8288B215E005A69EF /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1091,6 +1103,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8900CBC12885FD65007DDE9F /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		89E813F9288B215E005A69EF /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 89E813F8288B215E005A69EF /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

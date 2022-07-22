@@ -48,8 +48,6 @@ extension ContentView {
             }
             
         }
-        .navigationTitle("Home")
-        .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             showMenu = false
         }

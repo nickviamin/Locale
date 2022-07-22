@@ -6,6 +6,7 @@
 //
 import SwiftUI
 import Firebase
+import Introspect
 
 @main
 struct LocaleApp: App {
@@ -20,8 +21,28 @@ struct LocaleApp: App {
         WindowGroup {
             NavigationView {
                 ContentView()
+                    .introspectNavigationController { (UINavigationController) in
+                        NavigationControllerDelegate.shared.becomeDelegate(of: UINavigationController)
+                    }
             }
             .environmentObject(viewModel)
+        }
+    }
+}
+
+class NavigationControllerDelegate: NSObject {
+
+    static let shared = NavigationControllerDelegate()
+
+    func becomeDelegate(of navigationController: UINavigationController) {
+        navigationController.isNavigationBarHidden = true
+        navigationController.navigationBar.isHidden = true
+        navigationController.navigationBar.addObserver(self, forKeyPath: "alpha", options: .new, context: nil)
+    }
+
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if let navigationBar = object as? UINavigationBar {
+            navigationBar.isHidden = true
         }
     }
 }
