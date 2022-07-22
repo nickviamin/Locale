@@ -19,16 +19,13 @@ struct CartView: View {
                         .resizable()
                         .frame(width: 25, height: 20)
                         .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(width: 60, height: 35)
-                        .background(Color(red: 251 / 255, green: 143 / 255, blue: 104 / 255))
-                        .clipShape(Capsule())
+                        .foregroundColor(Color(red: 251 / 255, green: 143 / 255, blue: 104 / 255))
                         .padding()
                     }
                 Text("Your Box")
                     .foregroundColor(.gray)
                     .font(.largeTitle)
-                    .frame(width: 200, height: 50, alignment: .center)
+                    .frame(width: 266, height: 50, alignment: .center)
                 Spacer()
             }
             Spacer()

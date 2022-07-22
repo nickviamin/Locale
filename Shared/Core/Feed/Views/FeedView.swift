@@ -14,7 +14,7 @@ struct FeedView: View {
     @State private var showCartView = false
     
     var body: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 5) {
             Spacer()
             HStack(alignment: .top, spacing: 4) {
                 Text("Shopping For: Bay Area")
@@ -26,7 +26,9 @@ struct FeedView: View {
                     showCartView.toggle()
                 } label: {
                     Image(systemName: "cart")
+                        .resizable()
                         .offset(x: -20)
+                        .frame(width: 20, height: 20)
                         .foregroundColor(.gray)
                 }
             }
@@ -103,25 +105,27 @@ struct FeedView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     HStack {
                         Text("Locale Explorer")
-                            .font(Font.custom(FontsManager.Fonts.treb, size: 30))
+                            .font(Font.custom(FontsManager.Fonts.trebBold, size: 30))
                             .offset(x: 4)
                     }
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 4) {
+                        HStack(spacing: 20) {
                             FeedItemView(imageName: "chorizo", client: "cofax", itemName: "Chorizo Burrito", price: 14, quantity: "1", qType: true)
                             
                             FeedItemView(imageName: "veggie", client: "cofax", itemName: "Veggie Burrito", price: 17, quantity: "1", qType: true)
                             
                             FeedItemView(imageName: "bacon", client: "cofax", itemName: "Bacon Burrito", price: 17, quantity: "1", qType: true)
+                            Spacer()
+                                .frame(width: 0)
                         }
                     }
                     HStack {
                         Text("What's Hot This Week?")
-                            .font(Font.custom(FontsManager.Fonts.treb, size: 30))
+                            .font(Font.custom(FontsManager.Fonts.trebBold, size: 30))
                             .offset(x: 4)
                     }
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 4) {
+                        HStack(spacing: 20) {
                             FeedItemView(imageName: "peaches", client: "frog hollow farms", itemName: "Organic Flavor Crest Peaches", price: 12, quantity: "1", qType: true)
                             
                             FeedItemView(imageName: "pizza", client: "pizzeria delfina", itemName: "Funghi Pizza", price: 23, quantity: "2", qType: true)
@@ -139,6 +143,8 @@ struct FeedView: View {
                             FeedItemView(imageName: "milk", client: "strauss family creamery", itemName: "Organic Nonfat Milk", price: 5, quantity: "Half Gallon", qType: false)
 
                             FeedItemView(imageName: "strawbs", client: "live earth farms", itemName: "Organic Strawberries", price: 5, quantity: "1 clamshell", qType: false)
+                            Spacer()
+                                .frame(width: 0)
                         }
                     }
                     .fullScreenCover(isPresented: $showCartView) {

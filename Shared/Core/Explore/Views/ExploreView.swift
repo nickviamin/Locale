@@ -14,91 +14,93 @@ struct ExploreView: View {
                 .padding()
             ScrollView(showsIndicators: false) {
                 VStack {
-                    HStack {
-                        Text("Categories")
-                            .font(Font.custom(FontsManager.Fonts.treb, size: 30))
-                            .foregroundColor(.gray)
-                        Spacer()
-                            .frame(width: 225)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 20) {
+                            Spacer()
+                                .frame(width: 0)
+                            ExploreItemView(imageName: "milkICON", caption: "Dairy", capNeeded: true)
+                        
+                            ExploreItemView(imageName: "vegICON", caption: "Healthy", capNeeded: true)
+                        
+                            ExploreItemView(imageName: "pizzaICON", caption: "Pizza", capNeeded: true)
+                        
+                            ExploreItemView(imageName: "bakeryICON", caption: "Bakery", capNeeded: true)
+                        }
                     }
-                    HStack (spacing: 25){
-                        ExploreItemView(imageName: "milkICON")
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 20) {
+                            Spacer()
+                                .frame(width: 0)
+                            ExploreItemView(imageName: "fishICON", caption: "Fish", capNeeded: true)
                         
-                        ExploreItemView(imageName: "vegICON")
+                            ExploreItemView(imageName: "meatICON", caption: "Meat", capNeeded: true)
                         
-                        ExploreItemView(imageName: "pizzaICON")
+                            ExploreItemView(imageName: "pastaICON", caption: "Pasta", capNeeded: true)
                         
-                        ExploreItemView(imageName: "bakeryICON")
-                    }
-                    HStack(spacing: 25) {
-                        ExploreItemView(imageName: "fishICON")
-                        
-                        ExploreItemView(imageName: "meatICON")
-                        
-                        ExploreItemView(imageName: "pastaICON")
-                        
-                        ExploreItemView(imageName: "riceICON")
+                            ExploreItemView(imageName: "riceICON", caption: "Asian", capNeeded: true)
+                        }
                     }
                     HStack {
                         Text("Bay Area")
                             .font(Font.custom(FontsManager.Fonts.treb, size: 30))
-                            .foregroundColor(.gray)
+                            .foregroundColor(.black)
+                            .offset(x: -5, y: 15)
                         Spacer()
                             .frame(width: 225)
                     }
                     HStack (spacing: 25){
-                        ExploreItemView(imageName: "dumplingICON")
+                        ExploreItemView(imageName: "dumplingICON", caption: "", capNeeded: false)
                             
-                        ExploreItemView(imageName: "bICON")
+                        ExploreItemView(imageName: "bICON", caption: "", capNeeded: false)
                             
-                        ExploreItemView(imageName: "mICON")
+                        ExploreItemView(imageName: "mICON", caption: "", capNeeded: false)
                             
-                        ExploreItemView(imageName: "tICON")
+                        ExploreItemView(imageName: "tICON", caption: "", capNeeded: false)
                     }
                     HStack(spacing: 25) {
-                        ExploreItemView(imageName: "bobsICON")
+                        ExploreItemView(imageName: "bobsICON", caption: "", capNeeded: false)
                             
-                        ExploreItemView(imageName: "kagawaICON")
+                        ExploreItemView(imageName: "kagawaICON", caption: "", capNeeded: false)
                         
-                        ExploreItemView(imageName: "janeICON")
+                        ExploreItemView(imageName: "janeICON", caption: "", capNeeded: false)
                             
-                        ExploreItemView(imageName: "greensICON")
+                        ExploreItemView(imageName: "greensICON", caption: "", capNeeded: false)
                     }
                     HStack(spacing: 25) {
-                        ExploreItemView(imageName: "orensICON")
+                        ExploreItemView(imageName: "orensICON", caption: "", capNeeded: false)
                         
-                        ExploreItemView(imageName: "dragICON")
+                        ExploreItemView(imageName: "dragICON", caption: "", capNeeded: false)
                             
-                        ExploreItemView(imageName: "juicoICON")
+                        ExploreItemView(imageName: "juicoICON", caption: "", capNeeded: false)
                             
-                        ExploreItemView(imageName: "comalICON")
+                        ExploreItemView(imageName: "comalICON", caption: "", capNeeded: false)
                     }
                     HStack(spacing: 25) {
-                        ExploreItemView(imageName: "bouchonICON")
+                        ExploreItemView(imageName: "bouchonICON", caption: "", capNeeded: false)
                         
-                        ExploreItemView(imageName: "chickICON")
+                        ExploreItemView(imageName: "chickICON", caption: "", capNeeded: false)
                         
-                        ExploreItemView(imageName: "wolfICON")
+                        ExploreItemView(imageName: "wolfICON", caption: "", capNeeded: false)
                             
-                        ExploreItemView(imageName: "manICON")
+                        ExploreItemView(imageName: "manICON", caption: "", capNeeded: false)
                     }
                     HStack(spacing: 25) {
-                        ExploreItemView(imageName: "zachICON")
+                        ExploreItemView(imageName: "zachICON", caption: "", capNeeded: false)
                             
-                        ExploreItemView(imageName: "wiseICON")
+                        ExploreItemView(imageName: "wiseICON", caption: "", capNeeded: false)
                             
-                        ExploreItemView(imageName: "goldICON")
+                        ExploreItemView(imageName: "goldICON", caption: "", capNeeded: false)
                         
-                        ExploreItemView(imageName: "sunICON")
+                        ExploreItemView(imageName: "sunICON", caption: "", capNeeded: false)
                     }
                     HStack(spacing: 25) {
-                        ExploreItemView(imageName: "onoICON")
+                        ExploreItemView(imageName: "onoICON", caption: "", capNeeded: false)
                             
-                        ExploreItemView(imageName: "rotiICON")
+                        ExploreItemView(imageName: "rotiICON", caption: "", capNeeded: false)
                             
-                        ExploreItemView(imageName: "threeICON")
+                        ExploreItemView(imageName: "threeICON", caption: "", capNeeded: false)
                             
-                        ExploreItemView(imageName: "devilICON")
+                        ExploreItemView(imageName: "devilICON", caption: "", capNeeded: false)
                     }
                     
                 }
