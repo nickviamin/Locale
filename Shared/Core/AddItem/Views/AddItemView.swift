@@ -90,7 +90,7 @@ struct AddItemView: View {
             Button {
                 presentationMode.wrappedValue.dismiss()
             } label: {
-                Text("Add To Cart")
+                Text("Add To Box")
                     .font(.headline)
                     .foregroundColor(.white)
                     .frame(width: 340, height: 50)

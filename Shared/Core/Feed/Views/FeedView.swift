@@ -11,6 +11,7 @@ struct FeedView: View {
     
     @State private var selectedFilter: FeedViewModel = .tuesday
     @Namespace var animation
+    @State private var showCartView = false
     
     var body: some View {
         VStack(spacing: 10) {
@@ -22,7 +23,7 @@ struct FeedView: View {
                     .offset(x: 5)
                 Spacer()
                 Button {
-                    
+                    showCartView.toggle()
                 } label: {
                     Image(systemName: "cart")
                         .offset(x: -20)
@@ -140,6 +141,9 @@ struct FeedView: View {
                             FeedItemView(imageName: "strawbs", client: "live earth farms", itemName: "Organic Strawberries", price: 5, quantity: "1 clamshell", qType: false)
                         }
                     }
+                    .fullScreenCover(isPresented: $showCartView) {
+                        CartView()
+                    }
                 }
             }
             Spacer()
@@ -156,21 +160,21 @@ struct FeedView_Previews: PreviewProvider {
 
 extension Date {
 
-  static func today() -> Date {
-      return Date()
-  }
+    static func today() -> Date {
+        return Date()
+    }
 
-  func next(_ weekday: Weekday, considerToday: Bool = false) -> Date {
-    return get(.next,
-               weekday,
-               considerToday: considerToday)
-  }
+    func next(_ weekday: Weekday, considerToday: Bool = false) -> Date {
+        return get(.next,
+                   weekday,
+                   considerToday: considerToday)
+    }
 
-  func previous(_ weekday: Weekday, considerToday: Bool = false) -> Date {
-    return get(.previous,
-               weekday,
-               considerToday: considerToday)
-  }
+    func previous(_ weekday: Weekday, considerToday: Bool = false) -> Date {
+        return get(.previous,
+                   weekday,
+                   considerToday: considerToday)
+    }
 
     func stripTime(from originalDate: Date) -> Date {
         let components = Calendar.current.dateComponents([.year, .month, .day], from: originalDate)
@@ -178,59 +182,59 @@ extension Date {
         return date!
     }
 
-  func get(_ direction: SearchDirection,
-           _ weekDay: Weekday,
-           considerToday consider: Bool = false) -> Date {
+    func get(_ direction: SearchDirection,
+             _ weekDay: Weekday,
+             considerToday consider: Bool = false) -> Date {
 
-    let dayName = weekDay.rawValue
+        let dayName = weekDay.rawValue
 
-    let weekdaysName = getWeekDaysInEnglish().map { $0.lowercased() }
+        let weekdaysName = getWeekDaysInEnglish().map { $0.lowercased() }
 
-    assert(weekdaysName.contains(dayName), "weekday symbol should be in form \(weekdaysName)")
+        assert(weekdaysName.contains(dayName), "weekday symbol should be in form \(weekdaysName)")
 
-    let searchWeekdayIndex = weekdaysName.firstIndex(of: dayName)! + 1
+        let searchWeekdayIndex = weekdaysName.firstIndex(of: dayName)! + 1
 
-    let calendar = Calendar(identifier: .gregorian)
+        let calendar = Calendar(identifier: .gregorian)
 
-    if consider && calendar.component(.weekday, from: self) == searchWeekdayIndex {
-      return self
+        if consider && calendar.component(.weekday, from: self) == searchWeekdayIndex {
+            return self
+        }
+
+        var nextDateComponent = calendar.dateComponents([.hour, .minute, .second], from: self)
+        nextDateComponent.weekday = searchWeekdayIndex
+
+        let date = calendar.nextDate(after: self,
+                                     matching: nextDateComponent,
+                                     matchingPolicy: .nextTime,
+                                     direction: direction.calendarSearchDirection)
+
+        return date!
     }
-
-    var nextDateComponent = calendar.dateComponents([.hour, .minute, .second], from: self)
-    nextDateComponent.weekday = searchWeekdayIndex
-
-    let date = calendar.nextDate(after: self,
-                                 matching: nextDateComponent,
-                                 matchingPolicy: .nextTime,
-                                 direction: direction.calendarSearchDirection)
-
-    return date!
-  }
 
 }
 
 extension Date {
-  func getWeekDaysInEnglish() -> [String] {
-    var calendar = Calendar(identifier: .gregorian)
-    calendar.locale = Locale(identifier: "en_US_POSIX")
-    return calendar.weekdaySymbols
-  }
-
-  enum Weekday: String {
-    case monday, tuesday, wednesday, thursday, friday, saturday, sunday
-  }
-
-  enum SearchDirection {
-    case next
-    case previous
-
-    var calendarSearchDirection: Calendar.SearchDirection {
-      switch self {
-      case .next:
-        return .forward
-      case .previous:
-        return .backward
-      }
+    func getWeekDaysInEnglish() -> [String] {
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.locale = Locale(identifier: "en_US_POSIX")
+        return calendar.weekdaySymbols
     }
-  }
+
+    enum Weekday: String {
+        case monday, tuesday, wednesday, thursday, friday, saturday, sunday
+    }
+
+    enum SearchDirection {
+        case next
+        case previous
+
+        var calendarSearchDirection: Calendar.SearchDirection {
+            switch self {
+            case .next:
+                return .forward
+            case .previous:
+                return .backward
+            }
+        }
+    }
 }
