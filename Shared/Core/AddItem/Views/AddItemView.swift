@@ -88,7 +88,7 @@ struct AddItemView: View {
                 }
             }
             Button {
-
+                presentationMode.wrappedValue.dismiss()
             } label: {
                 Text("Add To Cart")
                     .font(.headline)

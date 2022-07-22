@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct FeedView: View {
+    
+    @State private var selectedFilter: FeedViewModel = .tuesday
+    @Namespace var animation
+    
     var body: some View {
         VStack(spacing: 10) {
             Spacer()
@@ -26,32 +30,73 @@ struct FeedView: View {
                 }
             }
             
-            HStack(spacing: 7) {
+            HStack(spacing: 8) {
                 Text("Delivery On:")
                     .foregroundColor(.gray)
                     .font(.subheadline).bold()
-                Button {
-                    
-                }label: {
-                    Text("Tuesday, July 19th")
-                        .font(.subheadline)
-                        .foregroundColor(.white)
-                        .frame(width: 138, height: 30)
-                        .foregroundColor(.black)
-                        .background(RoundedRectangle(cornerRadius: 20))
-                        .foregroundColor(.gray)
+                    .offset(x: -7)
+                ForEach(FeedViewModel.allCases, id: \.rawValue) { item in
+                    VStack {
+                        if item.title == "Tuesday" {
+                            HStack {
+                                if Date.today().next(.saturday) < Date.today().next(.tuesday) {
+                                    Text("Saturday,")
+                                        .font(.subheadline)
+                                        .fontWeight(selectedFilter == item ? .semibold : .regular)
+                                        .foregroundColor(selectedFilter == item ? .black : .gray)
+                                        .offset(y: 7)
+                                } else {
+                                    Text("Tuesday,")
+                                        .font(.subheadline)
+                                        .fontWeight(selectedFilter == item ? .semibold : .regular)
+                                        .foregroundColor(selectedFilter == item ? .black : .gray)
+                                        .offset(y: 7)
+                                }
+                                Text(min(Date.today().next(.saturday), Date.today().next(.tuesday)), format: .dateTime.day().month())
+                                    .font(.subheadline)
+                                    .fontWeight(selectedFilter == item ? .semibold : .regular)
+                                    .foregroundColor(selectedFilter == item ? .black : .gray)
+                                    .offset(y: 8)
+                            }
+                        } else {
+                            HStack {
+                                if Date.today().next(.saturday) > Date.today().next(.tuesday) {
+                                    Text("Saturday,")
+                                        .font(.subheadline)
+                                        .fontWeight(selectedFilter == item ? .semibold : .regular)
+                                        .foregroundColor(selectedFilter == item ? .black : .gray)
+                                        .offset(y: 8)
+                                } else {
+                                    Text("Tuesday,")
+                                        .font(.subheadline)
+                                        .fontWeight(selectedFilter == item ? .semibold : .regular)
+                                        .foregroundColor(selectedFilter == item ? .black : .gray)
+                                        .offset(y: 8)
+                                }
+                                Text(max(Date.today().next(.saturday), Date.today().next(.tuesday)), format: .dateTime.day().month())
+                                    .font(.subheadline)
+                                    .fontWeight(selectedFilter == item ? .semibold : .regular)
+                                    .foregroundColor(selectedFilter == item ? .black : .gray)
+                                    .offset(y: 9)
+                                }
+                            }
+                        if selectedFilter == item {
+                            Capsule()
+                                .foregroundColor(Color(red: 251 / 255, green: 143 / 255, blue: 104 / 255))
+                                .frame(width: 130, height: 3)
+                                .matchedGeometryEffect(id: "filter", in: animation)
+                        } else {
+                            Capsule()
+                                .foregroundColor(Color(.clear))
+                                .frame(width: 130, height: 3)
+                        }
+                    }
+                    .onTapGesture {
+                        withAnimation(.easeInOut) {
+                            self.selectedFilter = item
+                        }
+                    }
                 }
-                Button {
-                    
-                }label: {
-                    Text("Saturday, July 23rd")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                        .frame(width: 140, height: 30)
-                        .foregroundColor(.black)
-                        .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.gray, lineWidth: 0.75))
-                }
-
             }
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 8) {
@@ -88,7 +133,7 @@ struct FeedView: View {
                             
                             FeedItemView(imageName: "cheese", client: "cypress grove", itemName: "Purple Haze Goat Cheese", price: 8, quantity: "4 oz", qType: false)
 
-                            FeedItemView(imageName: "tomato", client: "terra firma farm", itemName: "Organic Cherry Tomatos", price: 8, quantity: "1 basket", qType: false)
+                            FeedItemView(imageName: "tomato", client: "terra firma farm", itemName: "Organic Cherry Tomatoes", price: 8, quantity: "1 basket", qType: false)
 
                             FeedItemView(imageName: "milk", client: "strauss family creamery", itemName: "Organic Nonfat Milk", price: 5, quantity: "Half Gallon", qType: false)
 
@@ -107,4 +152,85 @@ struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
         FeedView()
     }
+}
+
+extension Date {
+
+  static func today() -> Date {
+      return Date()
+  }
+
+  func next(_ weekday: Weekday, considerToday: Bool = false) -> Date {
+    return get(.next,
+               weekday,
+               considerToday: considerToday)
+  }
+
+  func previous(_ weekday: Weekday, considerToday: Bool = false) -> Date {
+    return get(.previous,
+               weekday,
+               considerToday: considerToday)
+  }
+
+    func stripTime(from originalDate: Date) -> Date {
+        let components = Calendar.current.dateComponents([.year, .month, .day], from: originalDate)
+        let date = Calendar.current.date(from: components)
+        return date!
+    }
+
+  func get(_ direction: SearchDirection,
+           _ weekDay: Weekday,
+           considerToday consider: Bool = false) -> Date {
+
+    let dayName = weekDay.rawValue
+
+    let weekdaysName = getWeekDaysInEnglish().map { $0.lowercased() }
+
+    assert(weekdaysName.contains(dayName), "weekday symbol should be in form \(weekdaysName)")
+
+    let searchWeekdayIndex = weekdaysName.firstIndex(of: dayName)! + 1
+
+    let calendar = Calendar(identifier: .gregorian)
+
+    if consider && calendar.component(.weekday, from: self) == searchWeekdayIndex {
+      return self
+    }
+
+    var nextDateComponent = calendar.dateComponents([.hour, .minute, .second], from: self)
+    nextDateComponent.weekday = searchWeekdayIndex
+
+    let date = calendar.nextDate(after: self,
+                                 matching: nextDateComponent,
+                                 matchingPolicy: .nextTime,
+                                 direction: direction.calendarSearchDirection)
+
+    return date!
+  }
+
+}
+
+extension Date {
+  func getWeekDaysInEnglish() -> [String] {
+    var calendar = Calendar(identifier: .gregorian)
+    calendar.locale = Locale(identifier: "en_US_POSIX")
+    return calendar.weekdaySymbols
+  }
+
+  enum Weekday: String {
+    case monday, tuesday, wednesday, thursday, friday, saturday, sunday
+  }
+
+  enum SearchDirection {
+    case next
+    case previous
+
+    var calendarSearchDirection: Calendar.SearchDirection {
+      switch self {
+      case .next:
+        return .forward
+      case .previous:
+        return .backward
+      }
+    }
+  }
 }

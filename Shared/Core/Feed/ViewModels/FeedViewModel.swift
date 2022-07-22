@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+enum FeedViewModel: Int, CaseIterable {
+    case tuesday
+    case saturday
+    
+    var title: String {
+        switch self {
+        case .tuesday: return "Tuesday"
+        case .saturday: return "Saturday"
+        }
+    }
+}
+
+
+
