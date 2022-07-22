@@ -49,6 +49,9 @@
 		89E813D8288A0378005A69EF /* FeedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E813D7288A0378005A69EF /* FeedItemView.swift */; };
 		89E813E0288A0A57005A69EF /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E813DF288A0A57005A69EF /* AddItemView.swift */; };
 		89E813E2288A0CA9005A69EF /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E813E1288A0CA9005A69EF /* ColorManager.swift */; };
+		89E813E7288AD0B9005A69EF /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E813E6288AD0B9005A69EF /* SearchBar.swift */; };
+		89E813E9288AD25D005A69EF /* ExploreItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E813E8288AD25D005A69EF /* ExploreItemView.swift */; };
+		89E813EB288AD574005A69EF /* ExploreIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E813EA288AD574005A69EF /* ExploreIconView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +106,9 @@
 		89E813D7288A0378005A69EF /* FeedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemView.swift; sourceTree = "<group>"; };
 		89E813DF288A0A57005A69EF /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		89E813E1288A0CA9005A69EF /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		89E813E6288AD0B9005A69EF /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		89E813E8288AD25D005A69EF /* ExploreItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreItemView.swift; sourceTree = "<group>"; };
+		89E813EA288AD574005A69EF /* ExploreIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreIconView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +272,7 @@
 		8900CBA62885FA53007DDE9F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				89E813E5288AD0A7005A69EF /* Search */,
 				8900CBB82885FBF5007DDE9F /* Auth */,
 			);
 			path = Components;
@@ -334,7 +341,8 @@
 		8900CBD6288617E0007DDE9F /* Explore */ = {
 			isa = PBXGroup;
 			children = (
-				8900CBDD28861826007DDE9F /* ExploreView.swift */,
+				89E813E4288AD076005A69EF /* ViewModels */,
+				89E813E3288AD070005A69EF /* Views */,
 			);
 			path = Explore;
 			sourceTree = "<group>";
@@ -388,6 +396,31 @@
 			children = (
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		89E813E3288AD070005A69EF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8900CBDD28861826007DDE9F /* ExploreView.swift */,
+				89E813E8288AD25D005A69EF /* ExploreItemView.swift */,
+				89E813EA288AD574005A69EF /* ExploreIconView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		89E813E4288AD076005A69EF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		89E813E5288AD0A7005A69EF /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				89E813E6288AD0B9005A69EF /* SearchBar.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -568,12 +601,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8900CBC02885FCF3007DDE9F /* CustomInputField.swift in Sources */,
+				89E813E9288AD25D005A69EF /* ExploreItemView.swift in Sources */,
 				8900CBAC2885FACF007DDE9F /* AuthViewModel.swift in Sources */,
 				8900CBAA2885FAA7007DDE9F /* LogInView.swift in Sources */,
 				8900CBBC2885FC48007DDE9F /* UserService.swift in Sources */,
 				8900CBD328861605007DDE9F /* FeedView.swift in Sources */,
 				8900CBBE2885FCB3007DDE9F /* RegistrationView.swift in Sources */,
 				8900CBDE28861826007DDE9F /* ExploreView.swift in Sources */,
+				89E813EB288AD574005A69EF /* ExploreIconView.swift in Sources */,
 				89E813D8288A0378005A69EF /* FeedItemView.swift in Sources */,
 				8900CBCD288615A8007DDE9F /* MainTabView.swift in Sources */,
 				89E813E0288A0A57005A69EF /* AddItemView.swift in Sources */,
@@ -581,6 +616,7 @@
 				89E813E2288A0CA9005A69EF /* ColorManager.swift in Sources */,
 				8900CBDA28861812007DDE9F /* OrdersView.swift in Sources */,
 				8900CBC82885FEC5007DDE9F /* RoundedShape.swift in Sources */,
+				89E813E7288AD0B9005A69EF /* SearchBar.swift in Sources */,
 				8900CBDC2886181E007DDE9F /* AccountView.swift in Sources */,
 				8900CBC52885FE82007DDE9F /* User.swift in Sources */,
 				8900CB8E2885F8B0007DDE9F /* ContentView.swift in Sources */,

@@ -17,14 +17,14 @@ struct MainTabView: View {
                     self.selectedIndex = 0
                 }
                 .tabItem {
-                    Image(systemName: "house")
+                    Image(systemName: "house").renderingMode(.template)
                 }.tag(0).navigationBarHidden(true)
             ExploreView()
                 .onTapGesture {
                     self.selectedIndex = 1
                 }
                 .tabItem {
-                    Image(systemName: "magnifyingglass")
+                    Image(systemName: "magnifyingglass").renderingMode(.template)
                 }.tag(1).navigationBarHidden(true)
             
             OrdersView()
@@ -32,7 +32,7 @@ struct MainTabView: View {
                     self.selectedIndex = 2
                 }
                 .tabItem {
-                    Image(systemName: "book")
+                    Image(systemName: "book").renderingMode(.template)
                 }.tag(2).navigationBarHidden(true)
             
             AccountView()
@@ -40,9 +40,9 @@ struct MainTabView: View {
                     self.selectedIndex = 3
                 }
                 .tabItem {
-                    Image(systemName: "person")
+                    Image(systemName: "person.crop.circle").renderingMode(.template)
                 }.tag(3).navigationBarHidden(true)
-        }
+        }.accentColor(Color(red: 251 / 255, green: 143 / 255, blue: 104 / 255))
         .navigationBarHidden(true)
     }
 }

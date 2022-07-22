@@ -72,7 +72,7 @@ struct AddItemView: View {
                             self.amount -= 1
                         }
                     }label: {
-                        Image(systemName: "minus.circle")
+                        Image(systemName: "minus")
                             .font(.system(size: 20))
                             .foregroundColor(.gray)
                     }
@@ -81,7 +81,7 @@ struct AddItemView: View {
                     Button {
                         self.amount += 1
                     } label: {
-                        Image(systemName: "plus.circle")
+                        Image(systemName: "plus")
                             .font(.system(size: 20))
                             .foregroundColor(.gray)
                     }

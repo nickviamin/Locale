@@ -47,7 +47,7 @@ struct LogInView: View {
                     Text("Forgot Password?")
                         .font(.caption)
                         .fontWeight(.semibold)
-                        .foregroundColor(Color(.systemBlue))
+                        .foregroundColor(Color(red: 251 / 255, green: 143 / 255, blue: 104 / 255))
                         .padding(.top)
                         .padding(.trailing, 24)
                 }
@@ -60,27 +60,13 @@ struct LogInView: View {
                     .font(.headline)
                     .foregroundColor(.white)
                     .frame(width: 340, height: 50)
-                    .background(Color(.systemBlue))
+                    .background(Color(red: 251 / 255, green: 143 / 255, blue: 104 / 255))
                     .clipShape(Capsule())
                     .padding()
             }
             .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: 0)
             
             Spacer()
-            /*
-            NavigationLink {
-                BusinessRegistrationView()
-                    .navigationBarHidden(true)
-            } label: {
-                HStack {
-                    Text("Want to add your business to Yoke?")
-                        .font(.footnote)
-                    Text("Sign Up")
-                        .font(.footnote)
-                        .fontWeight(.semibold)
-                }
-            }
-            */
             NavigationLink {
                 RegistrationView()
                     .navigationBarHidden(true)
@@ -88,9 +74,11 @@ struct LogInView: View {
                 HStack {
                     Text("Don't have an account?")
                         .font(.footnote)
+                        .foregroundColor(Color(red: 251 / 255, green: 143 / 255, blue: 104 / 255))
                     Text("Sign Up")
                         .font(.footnote)
                         .fontWeight(.semibold)
+                        .foregroundColor(Color(red: 251 / 255, green: 143 / 255, blue: 104 / 255))
                 }
             }
             .padding(.bottom, 32)
