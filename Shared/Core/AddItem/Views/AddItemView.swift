@@ -38,13 +38,16 @@ struct AddItemView: View {
                 .resizable()
                 .frame(width: 300, height: 300)
             HStack {
+                Spacer()
+                    .frame(width: 20)
                 Text(client.uppercased())
                     .foregroundColor(.gray)
-                    .font(.largeTitle)
+                    .font(Font.custom(FontsManager.Fonts.trebBold, size: 35))
                     .scaledToFill()
                     .minimumScaleFactor(0.5)
                     .lineLimit(1)
-                    .frame(width: .infinity, height: .infinity, alignment: .center)
+                Spacer()
+                    .frame(width: 20)
             }
             Spacer()
                 .frame(width: 40)
@@ -52,14 +55,14 @@ struct AddItemView: View {
                 Spacer()
                     .frame(width: 20)
                 Text(itemName)
-                    .font(.largeTitle)
+                    .font(Font.custom(FontsManager.Fonts.treb, size: 30))
                     .foregroundColor(.black)
                     .scaledToFill()
                     .minimumScaleFactor(0.5)
                     .lineLimit(1)
                 Spacer()
                 Text("$\(price)")
-                    .font(.system(size: 25))
+                    .font(Font.custom(FontsManager.Fonts.treb, size: 25))
                 Spacer()
                     .frame(width: 40)
             }
@@ -67,7 +70,7 @@ struct AddItemView: View {
                 .frame(height: 30)
             HStack {
                 Text(quantity)
-                    .font(.system(size: 25))
+                    .font(Font.custom(FontsManager.Fonts.treb, size: 25))
                 if qType{
                     Image(systemName: "person.fill")
                         .foregroundColor(.gray)
@@ -88,7 +91,7 @@ struct AddItemView: View {
                     Spacer()
                         .frame(width: 20)
                     Text("\(self.amount)")
-                        .font(.system(size: 25))
+                        .font(Font.custom(FontsManager.Fonts.treb, size: 25))
                     Spacer()
                         .frame(width: 20)
                     Button {
@@ -102,6 +105,7 @@ struct AddItemView: View {
             }
             Spacer()
                 .frame(height: 180)
+            Divider().frame(width: 400)
             Button {
                 presentationMode.wrappedValue.dismiss()
             } label: {
@@ -116,7 +120,7 @@ struct AddItemView: View {
                     
                 }
             }
-            Spacer()
+            //Spacer()
         }
     }
 }

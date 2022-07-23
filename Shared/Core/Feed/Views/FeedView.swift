@@ -101,6 +101,7 @@ struct FeedView: View {
                     }
                 }
             }
+            Divider().frame(width: 400)
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 8) {
                     HStack {
