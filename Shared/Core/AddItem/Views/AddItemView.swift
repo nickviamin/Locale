@@ -32,27 +32,39 @@ struct AddItemView: View {
                         .foregroundColor(Color(red: 251 / 255, green: 143 / 255, blue: 104 / 255))
                         .padding()
                     }
-                Text("LOGO")
-                    .foregroundColor(.gray)
-                    .font(.largeTitle)
-                    .frame(width: 266, height: 50, alignment: .center)
                 Spacer()
             }
             Image(imageName)
                 .resizable()
                 .frame(width: 300, height: 300)
+            HStack {
+                Text(client.uppercased())
+                    .foregroundColor(.gray)
+                    .font(.largeTitle)
+                    .scaledToFill()
+                    .minimumScaleFactor(0.5)
+                    .lineLimit(1)
+                    .frame(width: .infinity, height: .infinity, alignment: .center)
+            }
+            Spacer()
+                .frame(width: 40)
             HStack{
+                Spacer()
+                    .frame(width: 20)
                 Text(itemName)
                     .font(.largeTitle)
-                    .foregroundColor(.gray)
-                    .offset(x: 20)
+                    .foregroundColor(.black)
+                    .scaledToFill()
+                    .minimumScaleFactor(0.5)
+                    .lineLimit(1)
                 Spacer()
                 Text("$\(price)")
                     .font(.system(size: 25))
-                    .offset(x: -30)
+                Spacer()
+                    .frame(width: 40)
             }
             Spacer()
-                .frame(height: 20)
+                .frame(height: 30)
             HStack {
                 Text(quantity)
                     .font(.system(size: 25))
@@ -71,29 +83,38 @@ struct AddItemView: View {
                     }label: {
                         Image(systemName: "minus")
                             .font(.system(size: 20))
-                            .foregroundColor(.gray)
+                            .foregroundColor(amount > 1 ? Color(red: 251 / 255, green: 143 / 255, blue: 104 / 255) : .gray)
                     }
+                    Spacer()
+                        .frame(width: 20)
                     Text("\(self.amount)")
-                        .font(.system(size: 20))
+                        .font(.system(size: 25))
+                    Spacer()
+                        .frame(width: 20)
                     Button {
                         self.amount += 1
                     } label: {
                         Image(systemName: "plus")
                             .font(.system(size: 20))
-                            .foregroundColor(.gray)
+                            .foregroundColor(Color(red: 251 / 255, green: 143 / 255, blue: 104 / 255))
                     }
                 }
             }
+            Spacer()
+                .frame(height: 180)
             Button {
                 presentationMode.wrappedValue.dismiss()
             } label: {
-                Text("Add To Box")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .frame(width: 340, height: 50)
-                    .background(Color(red: 251 / 255, green: 143 / 255, blue: 104 / 255))
-                    .clipShape(Capsule())
-                    .padding()
+                HStack {
+                    Text("Add To Box                         $\(price * amount)")
+                        .font(Font.custom(FontsManager.Fonts.trebBold, size: 20))
+                        .foregroundColor(.white)
+                        .frame(width: 340, height: 50)
+                        .background(Color(red: 251 / 255, green: 143 / 255, blue: 104 / 255))
+                        .clipShape(Capsule())
+                        .padding()
+                    
+                }
             }
             Spacer()
         }
