@@ -111,7 +111,7 @@ struct FeedView: View {
                     }
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 20) {
-                            ForEach(productList, id: \.id) { product in
+                            ForEach(productList.prefix(3), id: \.id) { product in
                                 FeedItemView(product: product)
                                     .environmentObject(cartViewModel)
                             }
@@ -126,7 +126,7 @@ struct FeedView: View {
                     }
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 20) {
-                            ForEach(productList, id: \.id) { product in
+                            ForEach(productList[3..<productList.count], id: \.id) { product in
                                 FeedItemView(product: product)
                                     .environmentObject(cartViewModel)
                             }

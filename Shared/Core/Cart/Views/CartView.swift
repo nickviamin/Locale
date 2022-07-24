@@ -35,13 +35,29 @@ struct CartView: View {
                         product in
                         ProductRowView(product: product)
                     }
-                    HStack {
-                        Text("Your box total is")
-                        Spacer()
-                        Text("$\(cartViewModel.total).00")
-                            .bold()
+                    VStack {
+                        HStack {
+                            Text("Your box total is")
+                            Spacer()
+                            Text("$\(cartViewModel.total).00")
+                                .bold()
+                        }
+                        .padding()
+                        HStack {
+                            Text("Delivery Fee: ")
+                            Spacer()
+                            Text("$5.00")
+                                .bold()
+                        }
+                        .padding()
+                        HStack {
+                            Text("Your total is ")
+                            Spacer()
+                            Text("$\(cartViewModel.total + 5).00")
+                                .bold()
+                        }
+                        .padding()
                     }
-                    .padding()
                     PaymentButton(action: {})
                         .padding()
                 } else {

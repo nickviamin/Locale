@@ -10,16 +10,8 @@ import SwiftUI
 struct AddItemView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var cartViewModel: CartViewModel
-    @State var amount: Int = 1
+    @State var changedAmount: Int = 1
     var product: Product
-    /*
-    let imageName: String
-    let client: String
-    let itemName: String
-    let price: Int
-    let quantity: String
-    let qType: Bool
-    */
     
     var body: some View {
         VStack {
@@ -83,22 +75,22 @@ struct AddItemView: View {
                     .frame(width: 100)
                 HStack {
                     Button {
-                        if self.amount > 1 {
-                            self.amount -= 1
+                        if changedAmount > 1 {
+                            changedAmount -= 1
                         }
                     }label: {
                         Image(systemName: "minus")
                             .font(.system(size: 20))
-                            .foregroundColor(amount > 1 ? Color(red: 251 / 255, green: 143 / 255, blue: 104 / 255) : .gray)
+                            .foregroundColor(changedAmount > 1 ? Color(red: 251 / 255, green: 143 / 255, blue: 104 / 255) : .gray)
                     }
                     Spacer()
                         .frame(width: 20)
-                    Text("\(self.amount)")
+                    Text("\(changedAmount)")
                         .font(Font.custom(FontsManager.Fonts.treb, size: 25))
                     Spacer()
                         .frame(width: 20)
                     Button {
-                        self.amount += 1
+                        changedAmount += 1
                     } label: {
                         Image(systemName: "plus")
                             .font(.system(size: 20))
@@ -110,11 +102,11 @@ struct AddItemView: View {
                 .frame(height: 180)
             Divider().frame(width: 400)
             Button {
-                cartViewModel.addToCart(product: product)
+                cartViewModel.addToCart(product: product, changedAmount: changedAmount)
                 presentationMode.wrappedValue.dismiss()
             } label: {
                 HStack {
-                    Text("Add To Box                         $\(product.price * amount)")
+                    Text("Add To Box                         $\(product.price * changedAmount)")
                         .font(Font.custom(FontsManager.Fonts.trebBold, size: 20))
                         .foregroundColor(.white)
                         .frame(width: 340, height: 50)
