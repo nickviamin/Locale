@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FeedView: View {
     
+    @StateObject var cartViewModel = CartViewModel()
     @State private var selectedFilter: FeedViewModel = .tuesday
     @Namespace var animation
     @State private var showCartView = false
@@ -25,12 +26,11 @@ struct FeedView: View {
                 Button {
                     showCartView.toggle()
                 } label: {
-                    Image(systemName: "cart")
-                        .resizable()
-                        .offset(x: -20)
-                        .frame(width: 20, height: 20)
+                    CartButton(numberOfProducts: cartViewModel.products.count)
                         .foregroundColor(.gray)
                 }
+                Spacer()
+                    .frame(width: 15)
             }
             
             HStack(spacing: 8) {
@@ -111,11 +111,10 @@ struct FeedView: View {
                     }
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 20) {
-                            FeedItemView(imageName: "chorizo", client: "cofax", itemName: "Chorizo Burrito", price: 14, quantity: "1", qType: true)
-                            
-                            FeedItemView(imageName: "veggie", client: "cofax", itemName: "Veggie Burrito", price: 17, quantity: "1", qType: true)
-                            
-                            FeedItemView(imageName: "bacon", client: "cofax", itemName: "Bacon Burrito", price: 17, quantity: "1", qType: true)
+                            ForEach(productList, id: \.id) { product in
+                                FeedItemView(product: product)
+                                    .environmentObject(cartViewModel)
+                            }
                             Spacer()
                                 .frame(width: 0)
                         }
@@ -127,29 +126,17 @@ struct FeedView: View {
                     }
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 20) {
-                            FeedItemView(imageName: "peaches", client: "frog hollow farms", itemName: "Organic Flavor Crest Peaches", price: 12, quantity: "1", qType: true)
-                            
-                            FeedItemView(imageName: "pizza", client: "pizzeria delfina", itemName: "Funghi Pizza", price: 23, quantity: "2", qType: true)
-                            
-                            FeedItemView(imageName: "italian", client: "oren's hummus", itemName: "Hummus Chicken Bowl Meal", price: 16, quantity: "1", qType: true)
-                            
-                            FeedItemView(imageName: "granola", client: "manresa bread", itemName: "Almond Granola", price: 10, quantity: "8-10", qType: true)
-                            
-                            FeedItemView(imageName: "bagels", client: "wise sons", itemName: "Plain Bagels", price: 8, quantity: "4 count", qType: false)
-                            
-                            FeedItemView(imageName: "cheese", client: "cypress grove", itemName: "Purple Haze Goat Cheese", price: 8, quantity: "4 oz", qType: false)
-
-                            FeedItemView(imageName: "tomato", client: "terra firma farm", itemName: "Organic Cherry Tomatoes", price: 8, quantity: "1 basket", qType: false)
-
-                            FeedItemView(imageName: "milk", client: "strauss family creamery", itemName: "Organic Nonfat Milk", price: 5, quantity: "Half Gallon", qType: false)
-
-                            FeedItemView(imageName: "strawbs", client: "live earth farms", itemName: "Organic Strawberries", price: 5, quantity: "1 clamshell", qType: false)
+                            ForEach(productList, id: \.id) { product in
+                                FeedItemView(product: product)
+                                    .environmentObject(cartViewModel)
+                            }
                             Spacer()
                                 .frame(width: 0)
                         }
                     }
                     .fullScreenCover(isPresented: $showCartView) {
                         CartView()
+                            .environmentObject(cartViewModel)
                     }
                 }
             }

@@ -9,15 +9,17 @@ import SwiftUI
 
 struct AddItemView: View {
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var cartViewModel: CartViewModel
     @State var amount: Int = 1
-    
+    var product: Product
+    /*
     let imageName: String
     let client: String
     let itemName: String
     let price: Int
     let quantity: String
     let qType: Bool
-    
+    */
     
     var body: some View {
         VStack {
@@ -34,13 +36,14 @@ struct AddItemView: View {
                     }
                 Spacer()
             }
-            Image(imageName)
+            Image(product.imageName)
                 .resizable()
+                .aspectRatio(contentMode: .fit)
                 .frame(width: 300, height: 300)
             HStack {
                 Spacer()
                     .frame(width: 20)
-                Text(client.uppercased())
+                Text(product.client.uppercased())
                     .foregroundColor(.gray)
                     .font(Font.custom(FontsManager.Fonts.trebBold, size: 35))
                     .scaledToFill()
@@ -54,14 +57,14 @@ struct AddItemView: View {
             HStack{
                 Spacer()
                     .frame(width: 20)
-                Text(itemName)
+                Text(product.itemName)
                     .font(Font.custom(FontsManager.Fonts.treb, size: 30))
                     .foregroundColor(.black)
                     .scaledToFill()
                     .minimumScaleFactor(0.5)
                     .lineLimit(1)
                 Spacer()
-                Text("$\(price)")
+                Text("$\(product.price)")
                     .font(Font.custom(FontsManager.Fonts.treb, size: 25))
                 Spacer()
                     .frame(width: 40)
@@ -69,9 +72,9 @@ struct AddItemView: View {
             Spacer()
                 .frame(height: 30)
             HStack {
-                Text(quantity)
+                Text(product.quantity)
                     .font(Font.custom(FontsManager.Fonts.treb, size: 25))
-                if qType{
+                if product.qType{
                     Image(systemName: "person.fill")
                         .foregroundColor(.gray)
                         .font(.system(size: 20))
@@ -107,10 +110,11 @@ struct AddItemView: View {
                 .frame(height: 180)
             Divider().frame(width: 400)
             Button {
+                cartViewModel.addToCart(product: product)
                 presentationMode.wrappedValue.dismiss()
             } label: {
                 HStack {
-                    Text("Add To Box                         $\(price * amount)")
+                    Text("Add To Box                         $\(product.price * amount)")
                         .font(Font.custom(FontsManager.Fonts.trebBold, size: 20))
                         .foregroundColor(.white)
                         .frame(width: 340, height: 50)
@@ -127,6 +131,6 @@ struct AddItemView: View {
 
 struct AddItemView_Previews: PreviewProvider {
     static var previews: some View {
-        AddItemView(imageName: "chorizo", client: "cofax", itemName: "Chorizo Burrito", price: 14, quantity: "1", qType: true)
+        AddItemView(product: productList[0])
     }
 }

@@ -55,6 +55,10 @@
 		89E813F4288B09EF005A69EF /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E813F3288B09EF005A69EF /* CartView.swift */; };
 		89E813F7288B0A03005A69EF /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E813F6288B0A03005A69EF /* CartViewModel.swift */; };
 		89E813FA288B215E005A69EF /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 89E813F9288B215E005A69EF /* Introspect */; };
+		89E813FD288CB811005A69EF /* CartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E813FC288CB811005A69EF /* CartButton.swift */; };
+		89E813FF288CBA9D005A69EF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E813FE288CBA9D005A69EF /* Product.swift */; };
+		89E81401288CC7F5005A69EF /* ProductRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E81400288CC7F5005A69EF /* ProductRowView.swift */; };
+		89E81404288CCC90005A69EF /* PaymentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E81403288CCC90005A69EF /* PaymentButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +118,10 @@
 		89E813EE288AF3F8005A69EF /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		89E813F3288B09EF005A69EF /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		89E813F6288B0A03005A69EF /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		89E813FC288CB811005A69EF /* CartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartButton.swift; sourceTree = "<group>"; };
+		89E813FE288CBA9D005A69EF /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		89E81400288CC7F5005A69EF /* ProductRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRowView.swift; sourceTree = "<group>"; };
+		89E81403288CCC90005A69EF /* PaymentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				8900CBC42885FE82007DDE9F /* User.swift */,
+				89E813FE288CBA9D005A69EF /* Product.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -280,6 +289,8 @@
 		8900CBA62885FA53007DDE9F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				89E81402288CCC81005A69EF /* Payment */,
+				89E813FB288CB806005A69EF /* Cart */,
 				89E813E5288AD0A7005A69EF /* Search */,
 				8900CBB82885FBF5007DDE9F /* Auth */,
 			);
@@ -443,6 +454,7 @@
 			isa = PBXGroup;
 			children = (
 				89E813F3288B09EF005A69EF /* CartView.swift */,
+				89E81400288CC7F5005A69EF /* ProductRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -453,6 +465,22 @@
 				89E813F6288B0A03005A69EF /* CartViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		89E813FB288CB806005A69EF /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				89E813FC288CB811005A69EF /* CartButton.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		89E81402288CCC81005A69EF /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				89E81403288CCC90005A69EF /* PaymentButton.swift */,
+			);
+			path = Payment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -637,8 +665,10 @@
 				89E813EF288AF3F8005A69EF /* DateManager.swift in Sources */,
 				8900CBC02885FCF3007DDE9F /* CustomInputField.swift in Sources */,
 				89E813E9288AD25D005A69EF /* ExploreItemView.swift in Sources */,
+				89E81401288CC7F5005A69EF /* ProductRowView.swift in Sources */,
 				8900CBAC2885FACF007DDE9F /* AuthViewModel.swift in Sources */,
 				8900CBAA2885FAA7007DDE9F /* LogInView.swift in Sources */,
+				89E81404288CCC90005A69EF /* PaymentButton.swift in Sources */,
 				8900CBBC2885FC48007DDE9F /* UserService.swift in Sources */,
 				89E813F4288B09EF005A69EF /* CartView.swift in Sources */,
 				8900CBD328861605007DDE9F /* FeedView.swift in Sources */,
@@ -649,10 +679,12 @@
 				89E813E0288A0A57005A69EF /* AddItemView.swift in Sources */,
 				89E2CE792886501F008D4CE4 /* FontsManager.swift in Sources */,
 				89E813E2288A0CA9005A69EF /* ColorManager.swift in Sources */,
+				89E813FD288CB811005A69EF /* CartButton.swift in Sources */,
 				8900CBDA28861812007DDE9F /* OrdersView.swift in Sources */,
 				89E813F7288B0A03005A69EF /* CartViewModel.swift in Sources */,
 				8900CBC82885FEC5007DDE9F /* RoundedShape.swift in Sources */,
 				89E813E7288AD0B9005A69EF /* SearchBar.swift in Sources */,
+				89E813FF288CBA9D005A69EF /* Product.swift in Sources */,
 				8900CBDC2886181E007DDE9F /* AccountView.swift in Sources */,
 				8900CBC52885FE82007DDE9F /* User.swift in Sources */,
 				8900CB8E2885F8B0007DDE9F /* ContentView.swift in Sources */,

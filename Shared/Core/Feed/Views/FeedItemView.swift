@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct FeedItemView: View {
+    @EnvironmentObject var cartViewModel: CartViewModel
+    var product: Product
+    /*
     let imageName: String
     let client: String
     let itemName: String
     let price: Int
     let quantity: String
     let qType: Bool
+     */
     
     @State private var showAddItemView = false
     
@@ -22,33 +26,34 @@ struct FeedItemView: View {
             Button {
                 showAddItemView.toggle()
             } label: {
-                Image(imageName)
+                Image(product.imageName)
                     .resizable()
                     .frame(width:220, height:218)
+                    .aspectRatio(contentMode: .fit)
                     .scaledToFill()
                     .offset(x: 4)
             }
-            Text(client.uppercased())
+            Text(product.client.uppercased())
                 .font(.subheadline)
                 .foregroundColor(.gray)
                 .offset(x: 10)
-            Text(itemName)
+            Text(product.itemName)
                 .font(.subheadline)
                 .foregroundColor(.black)
                 .offset(x: 10)
             HStack {
-                Text("$\(price)")
+                Text("$\(product.price)")
                     .font(.subheadline)
                     .offset(x: 10)
                 Spacer()
-                Text(quantity)
-                if qType{
+                Text(product.quantity)
+                if product.qType{
                     Image(systemName: "person.fill")
                         .foregroundColor(.gray)
                 }
             }
             .fullScreenCover(isPresented: $showAddItemView) {
-                AddItemView(imageName: imageName, client: client, itemName: itemName, price: price, quantity: quantity, qType: qType)
+                AddItemView(product: product)
             }
         }
     }
@@ -56,6 +61,7 @@ struct FeedItemView: View {
 
 struct FeedItemView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedItemView(imageName: "chorizo", client: "cofax", itemName: "Chorizo Burrito", price: 14, quantity: "1", qType: true)
+        FeedItemView(product: productList[0])
+            .environmentObject(CartViewModel())
     }
 }

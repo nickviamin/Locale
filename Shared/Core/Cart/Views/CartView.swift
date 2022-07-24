@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CartView: View {
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var cartViewModel: CartViewModel
     var body: some View {
         VStack {
             HStack {
@@ -21,14 +22,33 @@ struct CartView: View {
                         .font(.headline)
                         .foregroundColor(Color(red: 251 / 255, green: 143 / 255, blue: 104 / 255))
                         .padding()
-                    }
+                }
                 Text("Your Box")
                     .foregroundColor(.gray)
                     .font(.largeTitle)
                     .frame(width: 266, height: 50, alignment: .center)
                 Spacer()
             }
-            Spacer()
+            ScrollView {
+                if cartViewModel.products.count > 0 {
+                    ForEach(cartViewModel.products, id: \.id) {
+                        product in
+                        ProductRowView(product: product)
+                    }
+                    HStack {
+                        Text("Your box total is")
+                        Spacer()
+                        Text("$\(cartViewModel.total).00")
+                            .bold()
+                    }
+                    .padding()
+                    PaymentButton(action: {})
+                        .padding()
+                } else {
+                    Text("Your box is currently empty")
+                }
+                Spacer()
+            }
         }
     }
 }
@@ -36,5 +56,6 @@ struct CartView: View {
 struct CartView_Previews: PreviewProvider {
     static var previews: some View {
         CartView()
+            .environmentObject(CartViewModel())
     }
 }
