@@ -9,7 +9,11 @@ import SwiftUI
 
 struct OrdersView: View {
     var body: some View {
-        Text("Display Orders Here")
+        VStack {
+            Text("No Past Orders")
+            Spacer()
+                .frame(height: 650)
+        }
             .navigationBarHidden(true)
             .statusBar(hidden: true)
     }

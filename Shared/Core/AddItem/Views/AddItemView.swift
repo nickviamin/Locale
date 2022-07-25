@@ -30,7 +30,6 @@ struct AddItemView: View {
             }
             Image(product.imageName)
                 .resizable()
-                .aspectRatio(contentMode: .fit)
                 .frame(width: 300, height: 300)
             HStack {
                 Spacer()

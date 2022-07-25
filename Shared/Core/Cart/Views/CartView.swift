@@ -29,42 +29,45 @@ struct CartView: View {
                     .frame(width: 266, height: 50, alignment: .center)
                 Spacer()
             }
-            ScrollView {
                 if cartViewModel.products.count > 0 {
-                    ForEach(cartViewModel.products, id: \.id) {
-                        product in
-                        ProductRowView(product: product)
-                    }
                     VStack {
-                        HStack {
-                            Text("Your box total is")
-                            Spacer()
-                            Text("$\(cartViewModel.total).00")
-                                .bold()
+                        ScrollView {
+                        ForEach(cartViewModel.products, id: \.id) {
+                            product in
+                            ProductRowView(product: product)
                         }
-                        .padding()
-                        HStack {
-                            Text("Delivery Fee: ")
-                            Spacer()
-                            Text("$5.00")
-                                .bold()
+                        VStack {
+                            HStack {
+                                Text("Your box total is")
+                                Spacer()
+                                Text("$\(cartViewModel.total).00")
+                                    .bold()
+                            }
+                            .padding()
+                            HStack {
+                                Text("Delivery Fee: ")
+                                Spacer()
+                                Text("$5.00")
+                                    .bold()
+                            }
+                            .padding()
+                            HStack {
+                                Text("Your total is ")
+                                Spacer()
+                                Text("$\(cartViewModel.total + 5).00")
+                                    .bold()
+                            }
+                            .padding()
+                            }
                         }
-                        .padding()
-                        HStack {
-                            Text("Your total is ")
-                            Spacer()
-                            Text("$\(cartViewModel.total + 5).00")
-                                .bold()
-                        }
-                        .padding()
+                        Spacer()
+                        PaymentButton(action: {})
+                            .padding()
                     }
-                    PaymentButton(action: {})
-                        .padding()
                 } else {
                     Text("Your box is currently empty")
                 }
                 Spacer()
-            }
         }
     }
 }

@@ -37,7 +37,7 @@ struct ExploreView: View {
                         
                             ExploreItemView(imageName: "pastaICON", caption: "Pasta", capNeeded: true)
                         
-                            ExploreItemView(imageName: "riceICON", caption: "Asian", capNeeded: true)
+                            ExploreItemView(imageName: "riceICON", caption: "Chinese", capNeeded: true)
                         }
                     }
                     HStack {
