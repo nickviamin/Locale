@@ -12,7 +12,7 @@ struct OrdersView: View {
         VStack {
             Text("No Past Orders")
             Spacer()
-                .frame(height: 650)
+                .frame(height: 550)
         }
             .navigationBarHidden(true)
             .statusBar(hidden: true)
