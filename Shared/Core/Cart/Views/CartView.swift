@@ -32,37 +32,44 @@ struct CartView: View {
                 if cartViewModel.products.count > 0 {
                     VStack {
                         ScrollView {
-                        ForEach(cartViewModel.products, id: \.id) {
-                            product in
-                            ProductRowView(product: product)
-                        }
-                        VStack {
-                            HStack {
-                                Text("Your box total is")
-                                Spacer()
-                                Text("$\(cartViewModel.total).00")
-                                    .bold()
-                            }
-                            .padding()
-                            HStack {
-                                Text("Delivery Fee: ")
-                                Spacer()
-                                Text("$5.00")
-                                    .bold()
-                            }
-                            .padding()
-                            HStack {
-                                Text("Your total is ")
-                                Spacer()
-                                Text("$\(cartViewModel.total + 5).00")
-                                    .bold()
-                            }
-                            .padding()
+                            ForEach(cartViewModel.products, id: \.id) {
+                                product in
+                                ProductRowView(product: product)
                             }
                         }
                         Spacer()
-                        PaymentButton(action: {})
+                        VStack {
+                            HStack {
+                                Text("Your box total")
+                                    .lineSpacing(10)
+                                Spacer()
+                                Text("$\(cartViewModel.total).00")
+                                    .bold()
+                                    .lineSpacing(10)
+                            }
                             .padding()
+                            HStack {
+                                Text("Delivery Fee")
+                                    .lineSpacing(10)
+                                Spacer()
+                                Text("$5.00")
+                                    .bold()
+                                    .lineSpacing(10)
+                                
+                            }
+                            .padding()
+                            HStack {
+                                Text("Your total")
+                                Spacer()
+                                    .lineSpacing(10)
+                                Text("$\(cartViewModel.total + 5).00")
+                                    .bold()
+                                    .lineSpacing(10)
+                            }
+                            .padding()
+                            PaymentButton(action: {})
+                                .padding()
+                            }
                     }
                 } else {
                     Text("Your box is currently empty")

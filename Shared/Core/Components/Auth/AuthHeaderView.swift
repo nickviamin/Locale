@@ -16,8 +16,7 @@ struct AuthHeaderView: View {
         ZStack(alignment: .topLeading){
             Image("header")
                 .resizable()
-                .frame(width: 410, height: 260)
-                .padding(.leading)
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.31) // 410 260 13 pro
                 .scaledToFill()
                 .clipShape(RoundedShape(corners: [.bottomRight]))
             
@@ -30,7 +29,6 @@ struct AuthHeaderView: View {
                 Text(title1)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
-                    .padding(.leading)
                     .padding()
                     .font(Font.custom(FontsManager.Fonts.treb, size: 70))
                 

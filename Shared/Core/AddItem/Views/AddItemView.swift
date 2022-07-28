@@ -30,6 +30,8 @@ struct AddItemView: View {
             }
             Image(product.imageName)
                 .resizable()
+                .scaledToFill()
+                .minimumScaleFactor(0.5)
                 .frame(width: 300, height: 300)
             HStack {
                 Spacer()

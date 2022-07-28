@@ -10,14 +10,6 @@ import SwiftUI
 struct FeedItemView: View {
     @EnvironmentObject var cartViewModel: CartViewModel
     var product: Product
-    /*
-    let imageName: String
-    let client: String
-    let itemName: String
-    let price: Int
-    let quantity: String
-    let qType: Bool
-     */
     
     @State private var showAddItemView = false
     
@@ -29,7 +21,8 @@ struct FeedItemView: View {
                 Image(product.imageName)
                     .resizable()
                     .frame(width:220, height:218)
-                    .aspectRatio(contentMode: .fit)
+                    .clipped()
+                    .aspectRatio(contentMode: .fill)
                     .scaledToFill()
                     .offset(x: 4)
             }

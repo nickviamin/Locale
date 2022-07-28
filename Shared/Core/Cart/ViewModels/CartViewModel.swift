@@ -26,7 +26,6 @@ class CartViewModel: ObservableObject {
                 break
             }
         }
-        
     }
 }
 
