@@ -3,7 +3,6 @@
 //  Locale (iOS)
 //
 //  Created by Nick Viamin on 7/23/22.
-// to be used at a later date, dont really like the look
 
 import SwiftUI
 

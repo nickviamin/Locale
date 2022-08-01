@@ -38,6 +38,8 @@
 		8900CBDC2886181E007DDE9F /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900CBDB2886181E007DDE9F /* AccountView.swift */; };
 		8900CBDE28861826007DDE9F /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900CBDD28861826007DDE9F /* ExploreView.swift */; };
 		89121E9E2891796D00E1F3E5 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89121E9D2891796D00E1F3E5 /* Client.swift */; };
+		89121EA02898347100E1F3E5 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89121E9F2898347100E1F3E5 /* ExploreViewModel.swift */; };
+		89121EA228983EC500E1F3E5 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89121EA128983EC500E1F3E5 /* ProductService.swift */; };
 		89C81DDE2886346B00901D3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8900CBB62885FBC3007DDE9F /* GoogleService-Info.plist */; };
 		89E2CE7628864FA1008D4CE4 /* Exec-Corners-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89E2CE7528864F9D008D4CE4 /* Exec-Corners-Medium.ttf */; };
 		89E2CE7728864FA1008D4CE4 /* Exec-Corners-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89E2CE7528864F9D008D4CE4 /* Exec-Corners-Medium.ttf */; };
@@ -108,6 +110,8 @@
 		8900CBDB2886181E007DDE9F /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		8900CBDD28861826007DDE9F /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		89121E9D2891796D00E1F3E5 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		89121E9F2898347100E1F3E5 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		89121EA128983EC500E1F3E5 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		89E2CE7528864F9D008D4CE4 /* Exec-Corners-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exec-Corners-Medium.ttf"; sourceTree = "<group>"; };
 		89E2CE782886501F008D4CE4 /* FontsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsManager.swift; sourceTree = "<group>"; };
 		89E2CE7B28865249008D4CE4 /* Trebuchet MS Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Trebuchet MS Bold.ttf"; path = "../../../../../../System/Library/Fonts/Supplemental/Trebuchet MS Bold.ttf"; sourceTree = "<group>"; };
@@ -266,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				8900CBBB2885FC48007DDE9F /* UserService.swift */,
+				89121EA128983EC500E1F3E5 /* ProductService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -432,6 +437,7 @@
 		89E813E4288AD076005A69EF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				89121E9F2898347100E1F3E5 /* ExploreViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -666,6 +672,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89E813EF288AF3F8005A69EF /* DateManager.swift in Sources */,
+				89121EA228983EC500E1F3E5 /* ProductService.swift in Sources */,
 				8900CBC02885FCF3007DDE9F /* CustomInputField.swift in Sources */,
 				89E813E9288AD25D005A69EF /* ExploreItemView.swift in Sources */,
 				89E81401288CC7F5005A69EF /* ProductRowView.swift in Sources */,
@@ -687,6 +694,7 @@
 				8900CBDA28861812007DDE9F /* OrdersView.swift in Sources */,
 				89E813F7288B0A03005A69EF /* CartViewModel.swift in Sources */,
 				8900CBC82885FEC5007DDE9F /* RoundedShape.swift in Sources */,
+				89121EA02898347100E1F3E5 /* ExploreViewModel.swift in Sources */,
 				89E813E7288AD0B9005A69EF /* SearchBar.swift in Sources */,
 				89E813FF288CBA9D005A69EF /* Product.swift in Sources */,
 				8900CBDC2886181E007DDE9F /* AccountView.swift in Sources */,

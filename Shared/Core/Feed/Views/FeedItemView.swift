@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct FeedItemView: View {
     @EnvironmentObject var cartViewModel: CartViewModel
@@ -19,6 +20,7 @@ struct FeedItemView: View {
                 showAddItemView.toggle()
             } label: {
                 Image(product.imageName)
+                //KFImage(URL(string: product.imageName))
                     .resizable()
                     .frame(width:220, height:218)
                     .clipped()

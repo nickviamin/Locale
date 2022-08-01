@@ -13,6 +13,7 @@ struct FeedView: View {
     @State private var selectedFilter: FeedViewModel = .tuesday
     @Namespace var animation
     @State private var showCartView = false
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         VStack(spacing: 5) {
@@ -130,6 +131,13 @@ struct FeedView: View {
                                 FeedItemView(product: product)
                                     .environmentObject(cartViewModel)
                             }
+                            // This is for reading from Firestore
+                            
+                            ForEach(viewModel.products) { product2 in
+                                FeedItemView(product: product2)
+                                    .environmentObject(cartViewModel)
+                            }
+                             
                             Spacer()
                                 .frame(width: 0)
                         }
