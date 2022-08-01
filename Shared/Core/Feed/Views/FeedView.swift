@@ -12,8 +12,8 @@ struct FeedView: View {
     @StateObject var cartViewModel = CartViewModel()
     @State private var selectedFilter: FeedViewModel = .tuesday
     @Namespace var animation
+    @ObservedObject var viewModel = FeedViewModelExtension()
     @State private var showCartView = false
-    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         VStack(spacing: 5) {

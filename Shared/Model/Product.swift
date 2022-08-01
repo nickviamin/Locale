@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Product: Identifiable {
+struct Product: Identifiable, Decodable {
     var id = UUID()
     let imageName: String
     let client: String
