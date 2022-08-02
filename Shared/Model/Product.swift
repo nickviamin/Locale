@@ -17,6 +17,7 @@ struct Product: Identifiable, Decodable {
     let qType: Bool
     var amount: Int
 }
+/*
 var productList = [Product(imageName: "chorizo", client: "cofax", itemName: "Chorizo Burrito", price: 14, quantity: "1", qType: true, amount: 1),
                    Product(imageName: "veggie", client: "cofax", itemName: "Veggie Burrito", price: 17, quantity: "1", qType: true, amount: 1),
                    Product(imageName: "bacon", client: "cofax", itemName: "Bacon Burrito", price: 17, quantity: "1", qType: true, amount: 1),
@@ -29,3 +30,4 @@ var productList = [Product(imageName: "chorizo", client: "cofax", itemName: "Cho
                    Product(imageName: "tomato", client: "terra firma farm", itemName: "Organic Cherry Tomatoes", price: 8, quantity: "1 basket", qType: false, amount: 1),
                    Product(imageName: "milk", client: "strauss family creamery", itemName: "Organic Nonfat Milk", price: 5, quantity: "Half Gallon", qType: false, amount: 1),
                    Product(imageName: "strawbs", client: "live earth farms", itemName: "Organic Strawberries", price: 5, quantity: "1 clamshell", qType: false, amount: 1)]
+*/

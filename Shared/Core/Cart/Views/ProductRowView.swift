@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProductRowView: View {
     @EnvironmentObject var cartViewModel: CartViewModel
     var product: Product
     var body: some View {
         HStack(spacing: 20){
-            Image(product.imageName)
+            KFImage(URL(string: product.imageName))
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 100)
@@ -39,7 +40,8 @@ struct ProductRowView: View {
 
 struct ProductRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductRowView(product: productList[3])
+        ProductRowView(product: Product(imageName: "chorizo", client: "cofax", itemName: "Chorizo Burrito", price: 14, quantity: "1", qType: true, amount: 1))
             .environmentObject(CartViewModel())
     }
 }
+

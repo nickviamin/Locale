@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct AddItemView: View {
     @Environment(\.presentationMode) var presentationMode
@@ -28,7 +29,7 @@ struct AddItemView: View {
                     }
                 Spacer()
             }
-            Image(product.imageName)
+            KFImage(URL(string: product.imageName))
                 .resizable()
                 .scaledToFill()
                 .minimumScaleFactor(0.5)
@@ -117,13 +118,13 @@ struct AddItemView: View {
                     
                 }
             }
-            //Spacer()
         }
     }
 }
 
 struct AddItemView_Previews: PreviewProvider {
     static var previews: some View {
-        AddItemView(product: productList[0])
+        AddItemView(product: Product(imageName: "chorizo", client: "cofax", itemName: "Chorizo Burrito", price: 14, quantity: "1", qType: true, amount: 1))
     }
 }
+

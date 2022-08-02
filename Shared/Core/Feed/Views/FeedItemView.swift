@@ -19,8 +19,8 @@ struct FeedItemView: View {
             Button {
                 showAddItemView.toggle()
             } label: {
-                Image(product.imageName)
-                //KFImage(URL(string: product.imageName))
+                //Image(product.imageName)
+                KFImage(URL(string: product.imageName))
                     .resizable()
                     .frame(width:220, height:218)
                     .clipped()
@@ -56,7 +56,8 @@ struct FeedItemView: View {
 
 struct FeedItemView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedItemView(product: productList[0])
+        FeedItemView(product: Product(imageName: "chorizo", client: "cofax", itemName: "Chorizo Burrito", price: 14, quantity: "1", qType: true, amount: 1))
             .environmentObject(CartViewModel())
     }
 }
+

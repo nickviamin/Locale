@@ -112,7 +112,7 @@ struct FeedView: View {
                     }
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 20) {
-                            ForEach(productList.prefix(3), id: \.id) { product in
+                            ForEach(viewModel.featuredProducts) { product in
                                 FeedItemView(product: product)
                                     .environmentObject(cartViewModel)
                             }
@@ -127,14 +127,10 @@ struct FeedView: View {
                     }
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 20) {
-                            ForEach(productList[3..<productList.count], id: \.id) { product in
-                                FeedItemView(product: product)
-                                    .environmentObject(cartViewModel)
-                            }
                             // This is for reading from Firestore
                             
-                            ForEach(viewModel.products) { product2 in
-                                FeedItemView(product: product2)
+                            ForEach(viewModel.products) { product in
+                                FeedItemView(product: product)
                                     .environmentObject(cartViewModel)
                             }
                              
