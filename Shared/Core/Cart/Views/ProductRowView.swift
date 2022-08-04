@@ -40,7 +40,7 @@ struct ProductRowView: View {
 
 struct ProductRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductRowView(product: Product(imageName: "chorizo", client: "cofax", itemName: "Chorizo Burrito", price: 14, quantity: "1", qType: true, amount: 1))
+        ProductRowView(product: Product(imageName: "chorizo", client: "cofax", itemName: "Chorizo Burrito", price: 14, quantity: "1", qType: true))
             .environmentObject(CartViewModel())
     }
 }

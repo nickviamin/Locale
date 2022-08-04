@@ -127,7 +127,6 @@ struct FeedView: View {
                     }
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 20) {
-                            // This is for reading from Firestore
                             
                             ForEach(viewModel.products) { product in
                                 FeedItemView(product: product)

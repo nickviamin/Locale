@@ -15,7 +15,6 @@ struct Product: Identifiable, Decodable {
     let price: Int
     let quantity: String
     let qType: Bool
-    var amount: Int
 }
 /*
 var productList = [Product(imageName: "chorizo", client: "cofax", itemName: "Chorizo Burrito", price: 14, quantity: "1", qType: true, amount: 1),

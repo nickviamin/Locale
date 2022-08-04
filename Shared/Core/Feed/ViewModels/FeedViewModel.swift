@@ -41,9 +41,8 @@ class FeedViewModelExtension: ObservableObject {
                 let price = doc.get("price") as! NSNumber
                 let quantity = doc.get("quantity") as! String
                 let qType = doc.get("qType") as! Bool
-                let amount = doc.get("amount") as! NSNumber
                 
-                return Product(imageName: imageName, client: client, itemName: itemName, price: Int(truncating: price), quantity: quantity, qType: qType, amount: Int(truncating: amount))
+                return Product(imageName: imageName, client: client, itemName: itemName, price: Int(truncating: price), quantity: quantity, qType: qType)
             })
         }
     }
@@ -59,9 +58,8 @@ class FeedViewModelExtension: ObservableObject {
                 let price = doc.get("price") as! NSNumber
                 let quantity = doc.get("quantity") as! String
                 let qType = doc.get("qType") as! Bool
-                let amount = doc.get("amount") as! NSNumber
                 
-                return Product(imageName: imageName, client: client, itemName: itemName, price: Int(truncating: price), quantity: quantity, qType: qType, amount: Int(truncating: amount))
+                return Product(imageName: imageName, client: client, itemName: itemName, price: Int(truncating: price), quantity: quantity, qType: qType)
             })
         }
     }

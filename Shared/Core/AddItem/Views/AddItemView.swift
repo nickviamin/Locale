@@ -3,7 +3,7 @@
 //  Locale (iOS)
 //
 //  Created by Nick Viamin on 7/21/22.
-//
+// 390 x  844
 
 import SwiftUI
 import Kingfisher
@@ -56,10 +56,12 @@ struct AddItemView: View {
                     .foregroundColor(.black)
                     .scaledToFill()
                     .minimumScaleFactor(0.5)
-                    .lineLimit(1)
+                    .lineLimit(2)
                 Spacer()
                 Text("$\(product.price)")
                     .font(Font.custom(FontsManager.Fonts.treb, size: 25))
+                    .minimumScaleFactor(0.95)
+                    .lineLimit(1)
                 Spacer()
                     .frame(width: 40)
             }
@@ -124,7 +126,6 @@ struct AddItemView: View {
 
 struct AddItemView_Previews: PreviewProvider {
     static var previews: some View {
-        AddItemView(product: Product(imageName: "chorizo", client: "cofax", itemName: "Chorizo Burrito", price: 14, quantity: "1", qType: true, amount: 1))
+        AddItemView(product: Product(imageName: "chorizo", client: "cofax", itemName: "Chorizo Burrito", price: 14, quantity: "1", qType: true))
     }
 }
-
