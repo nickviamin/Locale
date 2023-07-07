@@ -1,8 +1,8 @@
 //
 //  ProductRowView.swift
-//  Locale (iOS)
+//  LastCall
 //
-//  Created by Nick Viamin on 7/23/22.
+//  Created by Nick Viamin on 7/7/23.
 //
 
 import SwiftUI
@@ -44,4 +44,3 @@ struct ProductRowView_Previews: PreviewProvider {
             .environmentObject(CartViewModel())
     }
 }
-

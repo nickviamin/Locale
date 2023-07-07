@@ -2,7 +2,7 @@
 //  CartViewModel.swift
 //  Locale (iOS)
 //
-//  Created by Nick Viamin on 7/22/22.
+//  Created by Nick Viamin on 7/7/23.
 //
 
 import Foundation
@@ -28,4 +28,3 @@ class CartViewModel: ObservableObject {
         }
     }
 }
-

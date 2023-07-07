@@ -34,7 +34,7 @@ struct FeedView: View {
                     .frame(width: 15)
             }
             
-            HStack(spacing: 8) {
+            HStack(spacing: 6) {
                 Text("Delivery On:")
                     .foregroundColor(.gray)
                     .font(.subheadline).bold()
@@ -42,19 +42,19 @@ struct FeedView: View {
                 ForEach(FeedViewModel.allCases, id: \.rawValue) { item in
                     VStack {
                         if item.title == "Tuesday" {
-                            HStack {
+                            HStack(spacing: 6) {
                                 if Date.today().next(.saturday) < Date.today().next(.tuesday) {
                                     Text("Saturday,")
                                         .font(.subheadline)
                                         .fontWeight(selectedFilter == item ? .semibold : .regular)
                                         .foregroundColor(selectedFilter == item ? .black : .gray)
-                                        .offset(y: 7)
+                                        .offset(y: 8)
                                 } else {
                                     Text("Tuesday,")
                                         .font(.subheadline)
                                         .fontWeight(selectedFilter == item ? .semibold : .regular)
                                         .foregroundColor(selectedFilter == item ? .black : .gray)
-                                        .offset(y: 7)
+                                        .offset(y: 8)
                                 }
                                 Text(min(Date.today().next(.saturday), Date.today().next(.tuesday)), format: .dateTime.day().month())
                                     .font(.subheadline)
@@ -63,7 +63,7 @@ struct FeedView: View {
                                     .offset(y: 8)
                             }
                         } else {
-                            HStack {
+                            HStack(spacing: 6) {
                                 if Date.today().next(.saturday) > Date.today().next(.tuesday) {
                                     Text("Saturday,")
                                         .font(.subheadline)
@@ -81,7 +81,7 @@ struct FeedView: View {
                                     .font(.subheadline)
                                     .fontWeight(selectedFilter == item ? .semibold : .regular)
                                     .foregroundColor(selectedFilter == item ? .black : .gray)
-                                    .offset(y: 9)
+                                    .offset(y: 8)
                                 }
                             }
                         if selectedFilter == item {
